@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="Pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu controle financeiro</title>
+
+    <link rel="stylesheet" href="estilo-copia.css.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <!--CABEÇALHO-->
+        <header>
+
+        <div class="container-flex-row">
+            <span>💳</span>
+            <h1>Meu Financeiro</h1>
+        </div>
+        <p>Gerencie suas entradas e saídas de forma simples</p>
+
+        </header>
+
+        <!--CARDS PRINCIPAIS-->
+        <main>
+
+            <section class="container-flex-row secao-cards-principais">
+                
+                <div class="cards-principais">
+
+                    <div class="header-cards-principais">
+                        <span>Entradas</span>
+                        <span>⬆️</span>
+                    </div>
+                    <h2 class="h2-entrada">R$ 0,00</h2>
+                </div>
+
+                <div class="cards-principais">
+                    <div class="header-cards-principais">
+                        <span>Saídas</span>
+                        <span>⬇️</span>
+                    </div>
+                    <h2 class="h2-saida">R$ 0,00</h2>
+                </div>
+
+                <div class="cards-principais">
+                    <div class="header-cards-principais">
+                        <span>Saldo Total</span>
+                        <span>💰</span>
+                    </div>
+                    <h2 class="h2-saldo">R$ 0,00</h2>
+                </div>
+
+            </section>
+
+            <div>
+                <section class="secao ">
+
+                    <div>
+                        <h3>Nova Transação</h3>
+                    </div>
+
+                    <!--FORMULÁRIO DE CADASTRO-->
+                    <form action="" class="">
+
+                        <div class="container-flex-row">
+                            <div>
+                                <label for="input-descricao">Descrição</label>
+                                <input
+                                type="text"
+                                required
+                                id="input-descricao"
+                                placeholder="Ex: Mercado, salário, etc...">
+                            </div>
+                            <div>
+                                <label for="input-valor">Valor(R$)</label>
+                                <input
+                                type="number"
+                                required
+                                id="input-valor"
+                                placeholder="0,00">
+                            </div>
+                            <div>
+                                <label for="tipo-opcoes">Tipo</label>
+                                <select id="tipo-opcoes">
+                                    <option value="">Saída (Despesa)</option>
+                                    <option value="">Entrada (Receita)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="categoria-opcoes">Categoria</label>
+                                <select id="categoria-opcoes">
+                                    <option value="">Alimentação</option>
+                                    <option value="">Moradia</option>
+                                    <option value="">Transporte</option>
+                                    <option value="">Lazer</option>
+                                    <option value="">Salário</option>
+                                    <option value="">Outros</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="input-data">Data</label>
+                                <input
+                                type="date"
+                                required
+                                id="input-data" >
+                            </div>
+                        </div>
+
+                        <div>
+                            <button type="button">Adicionar Transação</button>
+                        </div>
+
+                    </form>
+
+                </section>
+            </div>    
+
+                <!--TABELA DE EXTRATOS-->
+                <div>
+                    <section class="secao">
+                        <div>
+                            <h3>Extrato de Transações</h3>
+                        </div>
+                        <div>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <td>Descrição</td>
+                                        <td>Valor</td>
+                                        <td>Categoria</td>
+                                        <td>Data</td>
+                                        <td>Ação</td>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                                <tfoot></tfoot>
+                            </table>
+                        </div>
+                    </section>
+                </div>
+
+            </div>
+
+        </main>
+
+        <footer></footer>
+
+    </div>
+    
+</body>
+</html>
