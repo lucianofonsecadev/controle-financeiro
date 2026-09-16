@@ -13,6 +13,7 @@
     --cor-borda: #e2e8f0; 
     --cor-texto-secundaria: #64748b;
     --sombra-borda: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    --azul-botao: #3b82f6;
 }
 
 /* BODY */
@@ -32,6 +33,8 @@ body {
     gap: 2rem;
 }
 
+/* PRIMEIRA SECTION E ALGUNS ESTILOS GERAIS*/
+
 .container-flex-row {
     display: flex;
     gap: 0.5rem;
@@ -45,9 +48,11 @@ main {
 }
 
 .secao {
-    border-radius: 5px;
+    border-radius: 20px;
     border: 1px solid var(--cor-borda);
     padding: 1rem;
+    background-color: white;
+    box-shadow: var(--sombra-borda);
 }
 
 .secao-cards-principais {
@@ -61,11 +66,15 @@ main {
 }
 
 .cards-principais {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
     border-radius: 20px;
     border: 1px solid var(--cor-borda);
-    padding: 1.5rem;
+    padding: 1.2rem;
     width: 18rem;
     box-shadow: var(--sombra-borda);
+    background-color: white;
 }
 
 .header-cards-principais {
@@ -73,24 +82,108 @@ main {
     justify-content: space-between;
 }
 
+.label-principal {
+    color: var(--cor-texto-secundaria);
+    font-size: small;
+    font-weight: bold;
+}
+
 h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 800;
 }
 
 .h2-entrada {
-    color: green;
+    color: rgb(4, 209, 4);
+    font-weight: bolder;
+    font-size: 2rem;
 }
 
 .h2-saida {
-    color: red;
+    color: rgb(221, 54, 54);
+    font-weight: bolder;
+    font-size: 2rem;
 }
 
 .h2-saldo {
-    color: blue;
+    color: black;
+    font-weight: bolder;
+    font-size: 2rem;
 }
 
 header p {
     color: var(--cor-texto-secundaria);
     margin-top: -0.5rem;
 }
+
+/* PRIMEIRA SECTION E ALGUNS ESTILOS GERAIS*/
+
+/*SEGUNDA SECTION*/
+
+.secao-cadastro {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+input, select {
+    background-color: rgba(245, 245, 245, 0.377);
+    padding: 0.8rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+}
+
+input[type="date"] {
+    color: var(--cor-texto-secundaria);
+}
+
+select {
+    color: var(--cor-texto-secundaria);
+}
+
+.label-form {
+    color: var(--cor-texto-secundaria);
+    font-weight: 400;
+    margin-left: 0.3rem;
+}
+
+.h3-form {
+    margin-top: 1rem;
+}
+
+.botao-formulario {
+    width: 100%;
+    border-radius: 5px;
+    padding: 0.8rem;
+    border: none;
+    background-color: var(--azul-botao);
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    transition: all 0.2s ease;
+}
+
+.botao-formulario:hover {
+    background-color: rgba(13, 13, 255, 0.932);
+}
+
+table {
+    width: 100%;
+    overflow-x: hidden;
+    margin-top: 1.5rem;
+}
+
+tr {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+td {
+    color: var(--cor-texto-secundaria);
+    font-weight: 400;
+}
+
+/*SEGUNDA SECTION*/

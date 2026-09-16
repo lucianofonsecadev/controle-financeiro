@@ -25,7 +25,7 @@
         <!--CARDS PRINCIPAIS-->
         <main>
 
-            <section class="container-flex-row secao-cards-principais">
+            <section class="container-flex-row secao-cards-principais label-principal">
                 
                 <div class="cards-principais">
 
@@ -55,26 +55,26 @@
             </section>
 
             <div>
-                <section class="secao ">
+                <section class="secao secao-cadastro">
 
                     <div>
-                        <h3>Nova Transação</h3>
+                        <h3 class="h3-form">Nova Transação</h3>
                     </div>
 
                     <!--FORMULÁRIO DE CADASTRO-->
-                    <form action="" class="">
+                    <form action="" class="secao-cadastro">
 
                         <div class="container-flex-row">
                             <div>
-                                <label for="input-descricao">Descrição</label>
+                                <label for="input-descricao" class="label-form">Descrição</label>
                                 <input
                                 type="text"
                                 required
                                 id="input-descricao"
-                                placeholder="Ex: Mercado, salário, etc...">
+                                placeholder="Ex: Mercado, salário...">
                             </div>
                             <div>
-                                <label for="input-valor">Valor(R$)</label>
+                                <label for="input-valor" class="label-form">Valor(R$)</label>
                                 <input
                                 type="number"
                                 required
@@ -82,14 +82,14 @@
                                 placeholder="0,00">
                             </div>
                             <div>
-                                <label for="tipo-opcoes">Tipo</label>
+                                <label for="tipo-opcoes" class="label-form">Tipo</label>
                                 <select id="tipo-opcoes">
                                     <option value="">Saída (Despesa)</option>
                                     <option value="">Entrada (Receita)</option>
                                 </select>
                             </div>
                             <div>
-                                <label for="categoria-opcoes">Categoria</label>
+                                <label for="categoria-opcoes" class="label-form">Categoria</label>
                                 <select id="categoria-opcoes">
                                     <option value="">Alimentação</option>
                                     <option value="">Moradia</option>
@@ -100,7 +100,7 @@
                                 </select>
                             </div>
                             <div>
-                                <label for="input-data">Data</label>
+                                <label for="input-data" class="label-form">Data</label>
                                 <input
                                 type="date"
                                 required
@@ -109,7 +109,7 @@
                         </div>
 
                         <div>
-                            <button type="button">Adicionar Transação</button>
+                            <button type="button" class="botao-formulario">Adicionar Transação</button>
                         </div>
 
                     </form>
