@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Financeiro</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- CABEÇALHO -->
+        <header>
+
+            <div class="cabecalho-titulo">
+                <span>💳</span>
+                <h1>Meu Financeiro</h1>
+            </div>
+
+            <p>Gerencie suas entradas e saídas de forma simples</p>
+
+        </header>
+
+
+        <!-- CARDS DE RESUMO -->
+        <section class="cards">
+
+            <div class="card box-shadow">
+                <div class="card-topo">
+                    <span>Entradas</span>
+                    <span>⬆️</span>
+                </div>
+                <h2 class="entrada-cor" id="total-entradas">R$ 0,00</h2>
+            </div>
+
+            <div class="card box-shadow">
+                <div class="card-topo">
+                    <span>Saídas</span>
+                    <span>⬇️</span>
+                </div>
+                <h2 class="saida-cor" id="total-saidas">R$ 0,00</h2>
+            </div>
+
+            <div class="card box-shadow">
+                <div class="card-topo">
+                    <span>Saldo Total</span>
+                    <span>💰</span>
+                </div>
+                <h2 id="total-saldo">R$ 0,00</h2>
+            </div>
+
+        </section>
+
+
+        <!-- FORMULÁRIO DE CADASTRO -->
+        <section class="secao box-shadow">
+
+            <h3>Nova Transação</h3>
+
+            <form id="formulario">
+
+                <div class="linha-formulario">
+
+                    <div class="campo">
+                        <label for="input-descricao">Descrição</label>
+                        <input
+                            type="text"
+                            required
+                            id="input-descricao"
+                            placeholder="Ex: Mercado, salário...">
+                    </div>
+
+                    <div class="campo">
+                        <label for="input-valor">Valor (R$)</label>
+                        <input
+                            type="number"
+                            step="0.01"
+                            min="0.01"
+                            required
+                            id="input-valor"
+                            placeholder="0,00">
+                    </div>
+
+                    <div class="campo">
+                        <label for="tipo-opcoes">Tipo</label>
+                        <select id="tipo-opcoes">
+                            <option value="saida">Saída (Despesa)</option>
+                            <option value="entrada">Entrada (Receita)</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="categoria-opcoes">Categoria</label>
+                        <select id="categoria-opcoes">
+                            <option value="alimentacao">Alimentação</option>
+                            <option value="moradia">Moradia</option>
+                            <option value="transporte">Transporte</option>
+                            <option value="lazer">Lazer</option>
+                            <option value="salario">Salário</option>
+                            <option value="outros">Outros</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="input-data">Data</label>
+                        <input
+                            type="date"
+                            required
+                            id="input-data">
+                    </div>
+
+                </div>
+
+                <button type="submit" class="botao-formulario">Adicionar Transação</button>
+
+            </form>
+
+        </section>
+
+
+        <!-- TABELA DE EXTRATO -->
+        <section class="secao box-shadow">
+
+            <h3>Extrato de Transações</h3>
+
+            <div class="tabela-container">
+
+                <table id="tabela">
+
+                    <thead>
+                        <tr>
+                            <td>Descrição</td>
+                            <td>Valor</td>
+                            <td>Categoria</td>
+                            <td>Data</td>
+                            <td>Ação</td>
+                        </tr>
+                    </thead>
+
+                    <tbody></tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
