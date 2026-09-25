@@ -43,7 +43,7 @@ function formatarData(dataIso) {
 function formatarMoeda(numero) {
 
     if(!numero) {
-        return "";
+        return "R$ 0,00";
     }
 
     return numero.toLocaleString("pt-BR", {
@@ -70,6 +70,10 @@ formulario.addEventListener("submit", (evento) => {
     transacoes.push(novaTransacao);
 
     formulario.reset();
+
+    renderizarTabela();
+
+    atualizarTotais();
 })
 
 function renderizarTabela() {
@@ -99,10 +103,70 @@ function renderizarTabela() {
 
             const linha = document.createElement("tr");
 
-            
-        })
+            const nomeCategoria = nomesCategorias[item.categoria];
+
+            const valorFormatado = formatarMoeda(item.valor);
+
+            const dataFormatada = formatarData(item.data);
+
+            const sinal = item.tipo === "entrada" ? "+" : "-";
+
+            const classeCor = item.tipo === "entrada" ? "valor-entrada" : "valor-saida";
+
+            linha.innerHTML = `
+                <td>${item.descricao}</td>
+                <td class="${classeCor}">${sinal} ${valorFormatado}</td>
+                <td>${nomeCategoria}</td>
+                <td>${dataFormatada}</td>
+                <td> <button type="button" data-id="${item.id}">❌</button> </td>
+            `;
+
+            tabela.appendChild(linha);
+        });
     }
 }
+
+function atualizarTotais() {
+
+    let totalEntradas = 0;
+    let totalSaidas = 0;
+
+    transacoes.forEach(item => {
+
+        if(item.tipo === "entrada") {
+            
+            totalEntradas += item.valor;
+
+        } else if(item.tipo === "saida") {
+
+            totalSaidas += item.valor; 
+        }
+    });
+
+    const totalSaldo = totalEntradas - totalSaidas;
+
+    entradas.innerText = formatarMoeda(totalEntradas);
+    saidas.innerText = formatarMoeda(totalSaidas);
+    saldo.innerText = formatarMoeda(totalSaldo);
+}
+
+
+tabela.addEventListener("click", (evento) => {
+
+    if(evento.target.tagName === "BUTTON") {
+
+        const idParaRemover = Number(evento.target.dataset.id);
+
+        transacoes = transacoes.filter(item => item.id !== idParaRemover);
+
+        renderizarTabela();
+        atualizarTotais();
+
+    };
+})
+
+renderizarTabela();
+atualizarTotais();
 
 
 
