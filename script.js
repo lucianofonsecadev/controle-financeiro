@@ -171,10 +171,3 @@ atualizarTotais();
 
 
 
-
-
-
-
-
-
-
