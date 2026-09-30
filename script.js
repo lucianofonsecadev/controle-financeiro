@@ -8,7 +8,6 @@ const nomesCategorias = {
     lazer: "Lazer",
     salario: "Salário",
     outros: "Outros"
-
 }
 
 const formulario = document.getElementById("formulario");
@@ -39,7 +38,6 @@ function formatarData(dataIso) {
 
 }
 
-
 function formatarMoeda(numero) {
 
     if(!numero) {
@@ -52,7 +50,6 @@ function formatarMoeda(numero) {
     });
 
 }
-
 
 formulario.addEventListener("submit", (evento) => {
 
@@ -150,7 +147,6 @@ function atualizarTotais() {
     saldo.innerText = formatarMoeda(totalSaldo);
 }
 
-
 tabela.addEventListener("click", (evento) => {
 
     if(evento.target.tagName === "BUTTON") {
@@ -161,7 +157,6 @@ tabela.addEventListener("click", (evento) => {
 
         renderizarTabela();
         atualizarTotais();
-
     };
 })
 
